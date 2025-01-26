@@ -1,22 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { useParams } from 'react-router-dom';
 import styles from './Docs.module.css';
 
 const Docs = () => {
-  //状态管理，存储Markdown内容和目录
+  const { docName } = useParams();
   const [markdown, setMarkdown] = useState('');
   const [toc, setToc] = useState([]);
 
-  //Markdown文件的加载
   useEffect(() => {
-    const url = 'docs/README.md';
+    const url = `/docs/${docName}.md`;
     console.log('Fetching markdown from:', url);
     
     fetch(url)
+      .then(response => {
+        console.log('Response status:', response.status);
+        console.log('Response headers:', [...response.headers.entries()]);
+        return response;
+      })
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -32,7 +38,7 @@ const Docs = () => {
         console.error('Failed to load markdown:', err);
         console.error('Full error:', err);
       });
-  }, []);
+  }, [docName]);
 
   //生成目录
   const generateToc = (content) => {
@@ -70,6 +76,9 @@ const Docs = () => {
 
   return (
     <div className={styles.docsContainer}>
+      <Link to="/docs" className={styles.backButton}>
+        &larr; 返回文档列表
+      </Link>
       {renderToc()}{/* 渲染目录 */}   
       <main className={styles.content}>
         {/* Markdown渲染器 */}

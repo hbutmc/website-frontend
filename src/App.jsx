@@ -4,6 +4,7 @@ import Layout from './Layout';
 import Home from './pages/homepage/Home';
 import Docs from './pages/docspage/Docs';
 import Gallery from './components/Gallery';
+import DocList from './pages/docspage/DocList';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/docs" element={<Docs />} />
+          <Route path="/docs" element={<DocList />} />
+          <Route path="/docs/:docName" element={<Docs />} />
           <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </Layout>
