@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        <Link to="/" className={styles.logo}>HBUTMC</Link>
+        <Link to="/" className={styles.logo}>HBUTMC(v0.2-alpha)</Link>
         <ul className={styles.navLinks}>
           <li><Link to="/" className={styles.link}>主页</Link></li>
           <li><Link to="/docs" className={styles.link}>文档站</Link></li>
