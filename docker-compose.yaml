@@ -1,0 +1,12 @@
+services:
+  hbutmc-website:
+    container_name: hbutmc-website-container
+    image: blackwolf155/hbutmc-website:${VERSION}
+    build: 
+      context: .
+      args:
+        - APP_VERSION=${VERSION}
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
