@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Home.module.css';
-import { Carousel, Progress, Card, Button, Timeline } from 'antd';
+import { Card, Button, Timeline } from 'antd';
 import { TeamOutlined, BuildOutlined, ClockCircleOutlined, InfoCircleOutlined, CheckCircleTwoTone, RocketOutlined } from '@ant-design/icons';
 import ProgressBar from './ProgressBar';
 
@@ -15,22 +15,13 @@ const Home = () => {
   const newsItems = [
     { time: '2024-08-01', content: '假装我是一条动态' },
     { time: '2024-07-25', content: '假装我是一条动态' },
-    { time: '2024-07-18', content: '假装我是一条动态' },
-    { time: '2024-07-18', content: '假装我是一条动态' },
-    { time: '2024-07-18', content: '假装我是一条动态' },
-    { time: '2024-07-18', content: '假装我是一条动态' },
-    { time: '2024-07-18', content: '假装我是一条动态' },
-    { time: '2024-07-18', content: '假装我是一条动态' },
-    { time: '2024-07-18', content: '假装我是一条动态' },
-    { time: '2024-07-18', content: '假装我是一条动态' },
-    { time: '2024-07-18', content: '假装我是一条动态' },
-    { time: '2024-07-18', content: '假装我是一条动态' },
+    { time: '2024-07-18', content: '假装我是一条动态' }
   ];
 
 
   return (
     <div className={styles.container}>
-      <section className={styles.hero}>
+      <section className={styles.hero} >
         <div className={styles.heroContent}>
           <h1>欢迎来到HBUTMC</h1>
           <p className={styles.subtitle}>我们致力于在Minecraft中复刻湖工大校园</p>
@@ -131,7 +122,11 @@ const Home = () => {
       </section>
 
       
+      <footer style={{ textAlign: 'center', padding: '24px 0', backgroundColor: '#f0f2f5' }}>
+        豫ICP备2023025148号-2
+      </footer>
     </div>
+    
   );
 };
 

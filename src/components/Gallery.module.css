@@ -11,7 +11,7 @@
  并且在小屏幕上自动调整列数。*/
 .galleryGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
   gap: 2rem;
   margin-top: 2rem;
 }
