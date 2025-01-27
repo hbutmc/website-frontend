@@ -34,7 +34,9 @@ const Home = () => {
         <div className={styles.heroContent}>
           <h1>欢迎来到HBUTMC</h1>
           <p className={styles.subtitle}>我们致力于在Minecraft中复刻湖工大校园</p>
-          
+          <a href="https://map.hbutmc.cn" target="_blank" rel="noopener noreferrer">
+            <Button type="primary" className={styles.ctaButton}> 立即查看MC中的湖工大 </Button>
+          </a>
         </div>
       </section>
 

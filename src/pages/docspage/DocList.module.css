@@ -1,0 +1,55 @@
+.docListContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .docList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .docItem {
+    background: var(--background-light);
+    border-radius: 8px;
+    transition: all 0.2s;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+    overflow: hidden; /* 确保火焰效果不会溢出 */
+  }
+  
+  .docItem:hover {
+    transform: translateX(4px);
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .docLink {
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .docTitle {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+  }
+  
+  .docDescription {
+    margin: 0.5rem 0 0 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .docMeta {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 1rem;
+  }

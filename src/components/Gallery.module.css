@@ -1,9 +1,14 @@
 .galleryContainer {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 2rem auto;
   padding: 0 1rem;
 }
-
+/*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));:
+ 定义网格的列布局。auto-fit 表示自动填充可用空间，
+ minmax(300px, 1fr) 表示每列的最小宽度为 300px，
+ 最大宽度为 1fr（即等分剩余空间）。
+ 这样可以确保每列至少有 300px 宽，
+ 并且在小屏幕上自动调整列数。*/
 .galleryGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -14,20 +19,16 @@
 .galleryItem {
   background-color: white;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: hidden;/*隐藏超出画廊项边界的内容*/
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  /*设置过渡效果，当画廊项的状态发生变化时（如悬停），
+   transform 和 box-shadow 属性会在 0.3s 内平滑过渡。*/
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .galleryItem:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.galleryImage {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
 }
 
 .galleryCaption {

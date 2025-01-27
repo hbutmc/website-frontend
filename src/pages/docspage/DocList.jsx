@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Docs.module.css';
+import styles from './DocList.module.css';
 
 const DocList = () => {
   const [docs, setDocs] = useState([]);
